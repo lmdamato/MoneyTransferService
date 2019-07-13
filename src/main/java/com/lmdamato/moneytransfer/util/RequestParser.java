@@ -21,6 +21,7 @@ public class RequestParser {
     public static Option<Money> amount(@NonNull final HttpServerExchange exchange) {
         return pathParam(exchange, "amount")
             .map(BigDecimal::new)
+            .filter(a -> a.compareTo(BigDecimal.ZERO) > 0)
             .map(Money::new);
     }
 
