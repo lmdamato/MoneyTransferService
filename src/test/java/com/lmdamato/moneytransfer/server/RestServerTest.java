@@ -364,7 +364,7 @@ public class RestServerTest {
         client.execute(createUserRequest).close();
     }
 
-    private void checkBalance(@NonNull final String userId, @NonNull final double expected) throws IOException {
+    private void checkBalance(@NonNull final String userId, final double expected) throws IOException {
         final HttpUriRequest getBalanceRequest = new HttpGet(ENDPOINT + "/balance/" + userId);
         try (final CloseableHttpResponse response = client.execute(getBalanceRequest)) {
             final String responseBody = inputStreamToString(response.getEntity().getContent());
