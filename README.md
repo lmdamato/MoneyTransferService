@@ -57,7 +57,7 @@ The service defines the following endpoints:
 
 ```
 % curl -i -X PUT http://localhost:8080/create/abc1
-HTTP/1.1 204 No Content
+HTTP/1.1 201 Created
 Date: Sat, 13 Jul 2019 17:12:13 GMT
 
 % curl -i -X POST http://localhost:8080/deposit/abc1/1.23
